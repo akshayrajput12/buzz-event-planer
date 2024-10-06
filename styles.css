@@ -1,0 +1,891 @@
+/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+  --theme-color: #3867d6;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #222;
+  width: 100vw;
+}
+
+section {
+  padding: 2.5rem 9%;
+  align-items: center;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 9%;
+}
+
+.header .logo {
+  font-weight: bolder;
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.header .logo span {
+  color: var(--theme-color);
+}
+
+.header .navbar a {
+  font-size: 1.7rem;
+  color: #fff;
+  margin-left: 2rem;
+}
+
+.header .navbar a:hover {
+  color: var(--theme-color);
+}
+
+#menu-bars {
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+/* Home Section */
+.home {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background Video */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.7; /* Adjust as needed */
+}
+
+/* Content Styling */
+.home .content {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  margin: 2rem auto;
+  max-width: 80%; /* Make the content responsive */
+  padding-top: 6rem;
+}
+
+.home .content h3 {
+  color: #fff;
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInScale 2s ease-out forwards;
+}
+
+.home .content h3 .highlighted {
+  color: var(--theme-color);
+  display: block;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 3s ease-out forwards 1.5s;
+}
+
+/* Button Styling and Animation */
+.home .btn,
+.animated-btn {
+  margin-top: 2rem;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  border-radius: 0.5rem;
+  background: #666;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 3s ease-out forwards 2s;
+}
+
+.home .btn:hover,
+.animated-btn:hover {
+  background: var(--theme-color);
+}
+
+/* Slider */
+.home .home-slider .swiper-slide {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  height: 50rem;
+  width: 35rem;
+  position: relative;
+  z-index: 2;
+}
+
+.home .home-slider .swiper-slide img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Headings */
+.heading {
+  text-align: center;
+  padding-bottom: 2rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 4rem;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .home .content h3 {
+    font-size: 3rem;
+  }
+
+  .home .content h3 .highlighted {
+    font-size: 1.2rem;
+  }
+
+  .home .home-slider .swiper-slide {
+    height: 30rem;
+    width: 25rem;
+  }
+
+  .animated-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home .content h3 {
+    font-size: 2.5rem;
+  }
+
+  .home .content h3 .highlighted {
+    font-size: 1rem;
+  }
+
+  .home .home-slider .swiper-slide {
+    height: 20rem;
+    width: 15rem;
+  }
+
+  .animated-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.3rem;
+  }
+}
+
+
+.heading span {
+  
+  text-transform: uppercase;
+  color: white;
+}
+
+.service .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  gap: 1.5rem;
+}
+
+.service .box-container .box {
+  border-radius: 0.5rem;
+  background: #333;
+  text-align: center;
+  padding: 2.5rem;
+}
+
+.service .box-container .box i {
+  height: 6rem;
+  width: 6rem;
+  line-height: 6rem;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  background: var(--theme-color);
+  color: #fff;
+}
+
+.service .box-container .box h3 {
+  font-size: 2rem;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.service .box-container .box p {
+  font-size: 1.4rem;
+  color: #eee;
+  line-height: 1.8;
+}
+
+.about .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.about .row .image {
+  flex: 1 1 45rem;
+  padding: 1rem;
+}
+
+.about .row .image video {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1rem solid #333;
+}
+
+.about .row .content {
+  flex: 1 1 45rem;
+}
+
+.about .row .content h3 {
+  font-size: 3.5rem;
+  color: #fff;
+}
+
+.about .row .content p {
+  font-size: 1.5rem;
+  color: #eee;
+  padding: 1rem 0;
+  line-height: 2;
+}
+
+.gallery .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery .box-container .box {
+  position: relative;
+  border: 1rem solid #333;
+  border-radius: 0.5rem;
+  height: 25rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.gallery .box-container .box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery .box-container .box:hover img {
+  transform: scale(1.1);
+  filter: grayscale();
+}
+
+.gallery .box-container .box .title {
+  position: absolute;
+  top: -10rem;
+  left: 0;
+  right: 0;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.gallery .box-container .box:hover .title {
+  top: 0;
+}
+
+.gallery .box-container .box .icons {
+  position: absolute;
+  bottom: -10rem;
+  left: 0;
+  right: 0;
+  background: #333;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.gallery .box-container .box:hover .icons {
+  bottom: 0;
+}
+
+.gallery .box-container .box .icons a {
+  font-size: 2rem;
+  margin: 0.5rem 1rem;
+  color: #fff;
+}
+
+.gallery .box-container .box .icons a:hover {
+  color: var(--theme-color);
+}
+
+.price .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+
+.price .box-container .box {
+  padding: 2rem 0;
+  background: #333;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.price .box-container .box:hover {
+  transform: scale(1.03);
+}
+
+.price .box-container .box .title {
+  background: var(--theme-color);
+  color: #fff;
+  padding: 1.5rem 0;
+  font-size: 2rem;
+}
+
+.price .box-container .box .amount {
+  color: #fff;
+  padding-top: 2rem;
+  font-size: 4rem;
+}
+
+.price .box-container .box ul {
+  list-style-type: none;
+  padding: 1rem 0;
+}
+
+.price .box-container .box ul li {
+  font-size: 1.5rem;
+  color: #eee;
+  padding: 1rem 0;
+}
+
+.price .box-container .box ul li i {
+  color: var(--theme-color);
+  padding-right: 0.5rem;
+}
+/* Review Section Styling */
+.review {
+  padding: 5rem 2rem; /* Padding for spacing */
+  background-color: #f2f2f2; /* Light background for contrast */
+  text-align: center;
+  
+}
+
+.heading {
+  font-size: 2.5rem; /* Heading size */
+  color: var(--theme-color); /* Main theme color */
+  margin-bottom: 3rem; /* Space below heading */
+}
+
+.heading span {
+  color: #333; /* Darker color for emphasis */
+}
+
+/* Review Container */
+.review-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of cards */
+  justify-content: center; /* Center align cards */
+  gap: 2rem; /* Space between cards */
+  
+}
+
+/* Review Card */
+.review-card {
+  background: #fff; /* White background for cards */
+  border-radius: 1rem; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  padding: 2rem; /* Inner padding */
+  max-width: 300px; /* Max width for cards */
+  flex: 1 1 250px; /* Flex growth/shrink properties */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.review-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* User Info Section */
+.review-content {
+  text-align: left; /* Left align text in content */
+}
+
+.review .user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem; /* Space between user and text */
+}
+
+.review .user img {
+  height: 50px; /* Fixed image height */
+  width: 50px; /* Fixed image width */
+  border-radius: 50%; /* Circular images */
+  object-fit: cover;
+  border: 2px solid var(--theme-color); /* Border for images */
+  margin-right: 1rem; /* Space between image and user info */
+}
+
+.review .user h3 {
+  font-size: 1.25rem; /* User name font size */
+  color: #333; /* Dark color for text */
+  margin: 0; /* Remove margin */
+}
+
+.review .user span {
+  font-size: 0.875rem; /* User status font size */
+  color: #666; /* Gray for status */
+}
+
+.review .review-content p {
+  line-height: 1.5; /* Line height for readability */
+  color: #555; /* Dark gray for review text */
+  font-size: 1rem; /* Font size for review text */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2rem; /* Smaller heading size for tablets */
+  }
+
+  .review-card {
+    max-width: 90%; /* Full width on smaller devices */
+    padding: 1rem; /* Adjust padding */
+  }
+
+  .review .user img {
+    height: 40px; /* Smaller images on smaller screens */
+    width: 40px;
+  }
+
+  .review .user h3 {
+    font-size: 1rem; /* Adjust user name size */
+  }
+
+  .review .user span {
+    font-size: 0.8rem; /* Adjust user status size */
+  }
+
+  .review .review-content p {
+    font-size: 0.9rem; /* Adjust review text size */
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.5rem; /* Further adjust for mobile */
+  }
+
+  .review-card {
+    padding: 1rem; /* Further adjust padding */
+  }
+
+  .review .user img {
+    height: 30px; /* Smaller images for mobile */
+    width: 30px;
+  }
+
+  .review .user h3 {
+    font-size: 0.9rem; /* Further adjust user name size */
+  }
+
+  .review .user span {
+    font-size: 0.7rem; /* Further adjust user status size */
+  }
+
+  .review .review-content p {
+    font-size: 0.8rem; /* Further adjust review text size */
+  }
+}
+
+.contact form {
+  max-width: 70rem;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.contact form .inputBox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contact form .inputBox input,
+.contact form textarea {
+  width: 100%;
+  background: #333;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 0.7rem 0;
+  font-size: 1.5rem;
+  color: #fff;
+  text-transform: none;
+}
+
+.contact form .inputBox input::placeholder,
+.contact form textarea::placeholder {
+  color: #eee;
+  text-transform: capitalize;
+}
+
+.contact form .inputBox input:focus,
+.contact form textarea:focus {
+  background: #444;
+}
+
+.contact form .inputBox input {
+  width: 49%;
+}
+
+.contact form textarea {
+  resize: none;
+}
+
+.footer {
+  background: #111;
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2.5rem;
+  padding: 1rem 0;
+  color: #fff;
+}
+
+.footer .box-container .box a {
+  display: block;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  color: #eee;
+}
+
+.footer .box-container .box a i {
+  padding-right: 0.5rem;
+  color: var(--theme-color);
+}
+
+.footer .box-container .box a:hover i {
+  padding-right: 1.5rem;
+  color: #fff;
+}
+
+.footer .credit {
+  text-align: center;
+  border-top: 0.1rem solid #222;
+  color: #fff;
+  padding: 2rem;
+  padding-top: 2.5rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
+.footer .credit span {
+  color: var(--theme-color);
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #444;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--theme-color);
+  border-radius: 5rem;
+}
+
+
+.theme-toggler {
+  position: fixed;
+  top: 10rem;
+  right: -20rem;
+  background: #333;
+  z-index: 1000;
+  width: 20rem;
+  text-align: center;
+}
+
+.theme-toggler.active {
+  right: 0;
+}
+
+.theme-toggler h3 {
+  color: #fff;
+  padding: 1rem 0;
+  font-size: 2rem;
+}
+
+.theme-toggler .buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.theme-toggler .buttons .theme-btn {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.theme-toggler .toggle-btn {
+  position: absolute;
+  top: 0;
+  left: -5.9rem;
+  padding: 1.3rem 1.5rem;
+  background: #333;
+  cursor: pointer;
+}
+
+.theme-toggler .toggle-btn i {
+  color: #fff;
+  font-size: 3rem;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(360deg);
+  }
+}
+
+/* media queries  */
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .header {
+    padding: 1.5rem 2rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-bars {
+    display: initial;
+  }
+
+  .header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-top: 0.1rem solid #222;
+    background: #333;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  .header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .fa-times {
+    transform: rotate(180deg);
+  }
+
+  .header .navbar a {
+    display: flex;
+    background: #222;
+    border-radius: 0.5rem;
+    padding: 1.3rem;
+    margin: 1.3rem;
+    font-size: 2rem;
+  }
+
+  .home .content h3 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .home .home-slider .swiper-slide {
+    width: 27rem;
+  }
+
+  .contact form .inputBox input {
+    width: 100%;
+  }
+}
+
+
+
+/* Contact Form Modal */
+.contact-form-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none; /* Hidden initially */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.contact-form-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+}
+
+/* Form Inputs */
+.contact-form-container .input-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.contact-form-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.contact-form-container textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* Submit Button */
+.contact-form-container .btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.8rem 3rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  background: #666;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+}
+
+.contact-form-container .btn:hover {
+  background: var(--theme-color);
+}
+
+/* Animations for modal */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.contact-form-container {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-form-container {
+    max-width: 90%;
+  }
+
+  .contact-form-container input,
+  .contact-form-container textarea {
+    font-size: 1rem;
+  }
+}
+
+
