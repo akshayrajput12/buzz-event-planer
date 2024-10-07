@@ -11,6 +11,7 @@ a {
     width: 100vw;
     overflow: hidden;
     position: relative;
+    background-color: #F5F5F0; /* Soft Beige background */
 }
 
 .carousel .list .item {
@@ -35,7 +36,7 @@ a {
     transform: translateX(-50%);
     padding: 0 10%; /* Responsive padding */
     box-sizing: border-box;
-    color: #fff;
+    color: #333333; /* Charcoal Gray text */
     text-shadow: 0 5px 10px #0004;
 }
 
@@ -49,10 +50,11 @@ a {
     font-size: 5em; /* Large text for desktops */
     font-weight: bold;
     line-height: 1.3em;
+    color: #000000; /* Black for strong contrast */
 }
 
 .carousel .list .item .topic {
-    color: #f1683a;
+    color: #A3B69A; /* Sage Green for accents */
 }
 
 .carousel .list .item .buttons {
@@ -65,16 +67,17 @@ a {
 
 .carousel .list .item .buttons button {
     border: none;
-    background-color: #eee;
+    background-color: #C5A880; /* Muted Gold background */
     letter-spacing: 3px;
     font-family: Poppins;
     font-weight: 500;
+    color: #000000; /* Black text */
 }
 
 .carousel .list .item .buttons button:nth-child(2) {
     background-color: transparent;
-    border: 1px solid #fff;
-    color: #eee;
+    border: 1px solid #000000; /* Black border */
+    color: #000000; /* Black text */
 }
 
 /* Thumbnail */
@@ -93,6 +96,8 @@ a {
     height: 220px;
     flex-shrink: 0;
     position: relative;
+    border-radius: 20px;
+    background-color: #F5F5F0; /* Soft Beige for thumbnail background */
 }
 
 .thumbnail .item img {
@@ -103,7 +108,7 @@ a {
 }
 
 .thumbnail .item .content {
-    color: #fff;
+    color: #333333; /* Charcoal Gray text */
     position: absolute;
     bottom: 10px;
     left: 10px;
@@ -135,17 +140,17 @@ a {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #eee4;
+    background-color: #A3B69A; /* Sage Green for arrows */
     border: none;
-    color: #fff;
+    color: #000000; /* Black for text */
     font-family: monospace;
     font-weight: bold;
     transition: .5s;
 }
 
 .arrows button:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: #C5A880; /* Muted Gold hover effect */
+    color: #fff; /* White text on hover */
 }
 
 /* Animation */
@@ -153,7 +158,6 @@ a {
     z-index: 1;
 }
 
-/* Animation text in first item */
 .carousel .list .item:nth-child(1) .content .author,
 .carousel .list .item:nth-child(1) .content .title,
 .carousel .list .item:nth-child(1) .content .topic,
@@ -173,141 +177,15 @@ a {
     }
 }
 
-.carousel .list .item:nth-child(1) .content .title {
-    animation-delay: 1.2s !important;
-}
-
-.carousel .list .item:nth-child(1) .content .topic {
-    animation-delay: 1.4s !important;
-}
-
-.carousel .list .item:nth-child(1) .content .des {
-    animation-delay: 1.6s !important;
-}
-
-.carousel .list .item:nth-child(1) .content .buttons {
-    animation-delay: 1.8s !important;
-}
-
-/* Create animation when next click */
-.carousel.next .list .item:nth-child(1) img {
-    width: 150px;
-    height: 220px;
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    border-radius: 30px;
-    animation: showImage .5s linear 1 forwards;
-}
-
-@keyframes showImage {
-    to {
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
-    }
-}
-
-.carousel.next .thumbnail .item:nth-last-child(1) {
-    overflow: hidden;
-    animation: showThumbnail .5s linear 1 forwards;
-}
-
-.carousel.prev .list .item img {
-    z-index: 100;
-}
-
-@keyframes showThumbnail {
-    from {
-        width: 0;
-        opacity: 0;
-    }
-}
-
-.carousel.next .thumbnail {
-    animation: effectNext .5s linear 1 forwards;
-}
-
-@keyframes effectNext {
-    from {
-        transform: translateX(150px);
-    }
-}
-
 /* Running time */
 .carousel .time {
     position: absolute;
     z-index: 1000;
     width: 0%;
     height: 3px;
-    background-color: #f1683a;
+    background-color: #A3B69A; /* Sage Green time bar */
     left: 0;
     top: 0;
-}
-
-.carousel.next .time,
-.carousel.prev .time {
-    animation: runningTime 3s linear 1 forwards;
-}
-
-@keyframes runningTime {
-    from {
-        width: 100%;
-    }
-    to {
-        width: 0;
-    }
-}
-
-/* Prev click */
-.carousel.prev .list .item:nth-child(2) {
-    z-index: 2;
-}
-
-.carousel.prev .list .item:nth-child(2) img {
-    animation: outFrame 0.5s linear 1 forwards;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-@keyframes outFrame {
-    to {
-        width: 150px;
-        height: 220px;
-        bottom: 50px;
-        left: 50%;
-        border-radius: 20px;
-    }
-}
-
-.carousel.prev .thumbnail .item:nth-child(1) {
-    overflow: hidden;
-    opacity: 0;
-    animation: showThumbnail .5s linear 1 forwards;
-}
-
-.carousel.next .arrows button,
-.carousel.prev .arrows button {
-    pointer-events: none;
-}
-
-.carousel.prev .list .item:nth-child(2) .content .author,
-.carousel.prev .list .item:nth-child(2) .content .title,
-.carousel.prev .list .item:nth-child(2) .content .topic,
-.carousel.prev .list .item:nth-child(2) .content .des,
-.carousel.prev .list .item:nth-child(2) .content .buttons {
-    animation: contentOut 1.5s linear 1 forwards !important;
-}
-
-@keyframes contentOut {
-    to {
-        transform: translateY(-150px);
-        filter: blur(20px);
-        opacity: 0;
-    }
 }
 
 /* Media Queries for Responsiveness */
@@ -362,19 +240,21 @@ a {
         height: 2px; /* Smaller time bar */
     }
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap'); /* Reduced unnecessary font weights */
 
 body {
     font-family: Poppins, sans-serif;
     margin: 0;
-    background-color: #010101;
-    color: #eee;
+    background-color: #F5F5F0; /* Soft Beige background */
+    color: #333333; /* Charcoal Gray for text */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 svg {
     width: 25px;
+    fill: #A3B69A; /* Sage Green for SVG elements */
 }
 
 /* CSS for Project Showcase */
@@ -382,6 +262,7 @@ svg {
     height: 100vh;
     margin-top: -50px;
     position: relative;
+    background-color: #F5F5F0; /* Soft Beige background */
 }
 
 .project-showcase .showcase-entries .showcase-entry {
@@ -406,10 +287,10 @@ svg {
     position: absolute;
     left: 0;
     bottom: 0;
-    background-image: linear-gradient(to top, #000 40%, transparent);
+    background-image: linear-gradient(to top, #000000 40%, transparent); /* Black gradient */
 }
 
-.project-showcase .showcase-entries .showcase-entry .showcase-details {
+.project-showcase .showcase-entries .showcase-details {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -423,11 +304,13 @@ svg {
 .project-showcase .showcase-entries .showcase-details .project-category {
     text-transform: uppercase;
     letter-spacing: 10px;
+    color: #C5A880; /* Muted Gold for category */
 }
 
-.project-showcase .showcase-entries .showcase-details .project-title {
+.project-showcase .showcase-details .project-title {
     font-size: 4vw; /* Responsive font size */
     margin: 0;
+    color: #000000; /* Black for titles */
 }
 
 .project-showcase .showcase-entries .showcase-entry.active {
@@ -458,6 +341,7 @@ svg {
 
 .project-showcase .showcase-entries .showcase-entry.active .project-description {
     animation-duration: 1s; /* Reduced to 1s for snappier feel */
+    color: #333333; /* Charcoal Gray for descriptions */
 }
 
 /* Navigation Buttons */
@@ -472,25 +356,25 @@ svg {
 }
 
 .navigation-buttons button {
-    background-color: rgba(238, 238, 238, 0.25);
+    background-color: rgba(197, 168, 128, 0.25); /* Muted Gold for background */
     border: none;
     font-family: monospace;
     width: 40px;
     height: 40px;
     border-radius: 5px;
     font-size: x-large;
-    color: #eee;
+    color: #000000; /* Black for text */
     transition: 0.3s; /* Reduced transition time for faster response */
 }
 
 .navigation-buttons button:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: #C5A880; /* Muted Gold on hover */
+    color: #fff; /* White text on hover */
 }
 
 /* Focus state for accessibility */
 .navigation-buttons button:focus {
-    outline: 2px solid #fff;
+    outline: 2px solid #C5A880; /* Muted Gold focus outline */
 }
 
 /* Thumbnail Container */
@@ -506,7 +390,6 @@ svg {
     box-sizing: border-box;
     overflow-x: auto; /* Added horizontal scrolling for better navigation */
     flex-wrap: nowrap; /* Prevent thumbnails from wrapping */
-    
 }
 
 .thumbnail-container::-webkit-scrollbar {
@@ -526,15 +409,18 @@ svg {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    border: 1px solid #C5A880; /* Muted Gold border */
 }
 
 .thumbnail-container .thumbnail-entry.active {
     filter: brightness(1.5);
+    border-color: #A3B69A; /* Sage Green border for active */
 }
 
 .thumbnail-container .thumbnail-entry .thumbnail-caption {
     position: absolute;
     inset: auto 10px 10px 10px;
+    color: #333333; /* Charcoal Gray for captions */
 }
 
 /* Mobile View Adjustments */
@@ -572,3 +458,4 @@ svg {
         height: 40px;
     }
 }
+
